@@ -1,0 +1,119 @@
+{
+  "source": "index.html",
+  "source_sha256": "3da4cd9eb3ec8c1ba21c9a2e7a0527dd9fe23bc32ce8c2f4ee332184108b6e34",
+  "audio": [
+    {
+      "title": "Orbital Guidance",
+      "source": "Confused Photon / tutorial.mp3",
+      "credit": "Generated with Google Gemini, edited for Confused Photon",
+      "loopStart": 10.913,
+      "loopEnd": 51.3447,
+      "sha256": "81e0e37af8da30345f5f07a1397439b2ca651f9585c3a5ce9209f088f248cac7",
+      "key": "calm",
+      "path": "assets/audio/calm.mp3",
+      "bytes": 725210
+    },
+    {
+      "title": "Pulsar Horizon",
+      "source": "Confused Photon / anomalies.mp3",
+      "credit": "Generated with Google Gemini, edited for Confused Photon",
+      "loopStart": 20.956,
+      "loopEnd": 38.251,
+      "sha256": "c35c0f76202495dd1763ece497364185112ecd2a86eceab1c7d2a452924b26e7",
+      "key": "rhythm",
+      "path": "assets/audio/rhythm.mp3",
+      "bytes": 541988
+    }
+  ],
+  "icons": [
+    {
+      "path": "assets/icons/icon-01.svg",
+      "sha256": "3f3b1c24e148ba57c3653b1d8c7c853422b922202f6385f69774cd5c9a182b2c",
+      "bytes": 150,
+      "selectors": [
+        "#play"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-02.svg",
+      "sha256": "b311cfef9f398c30faac650d26e55ee589bcf7b27782e2cc9a9f57e050579153",
+      "bytes": 234,
+      "selectors": [
+        "#attack"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-03.svg",
+      "sha256": "0d75ce5e99b54cb31f43227b7297b3bdda0038f748d0257e87e720790f93c43b",
+      "bytes": 244,
+      "selectors": [
+        "#train"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-04.svg",
+      "sha256": "1502aa94058edfe7b26168fac400349379f567fbb17cc34ea453f6a477fe5f44",
+      "bytes": 181,
+      "selectors": [
+        ".menu-list button>span:last-child,.menu-session button>span:last-child",
+        ".settings-credits:after"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-05.svg",
+      "sha256": "66cd29cac75f78189b4c0326ff362baeb54cdb089c0bd2cb074a125b408f9f40",
+      "bytes": 258,
+      "selectors": [
+        "#menuGuide"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-06.svg",
+      "sha256": "73b59ea575761ee61e6f61e07539ef1088d19968eb00fb74fbecb69f59625a44",
+      "bytes": 238,
+      "selectors": [
+        "#pauseCollection"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-07.svg",
+      "sha256": "f6f0de9d2b289bcf70fac09bece1d20fa1f5e5a8936168f612244198a072811f",
+      "bytes": 416,
+      "selectors": [
+        "#menuThemes"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-08.svg",
+      "sha256": "8146af00c54bc688ed9c60127f157352963371ee6f99ef270db0ad3ed3f4cd6f",
+      "bytes": 261,
+      "selectors": [
+        "#pauseSettings"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-09.svg",
+      "sha256": "44575c789c3432a3daed421005f22a230afbcdbc87daa1198ed17c527fac9e1f",
+      "bytes": 202,
+      "selectors": [
+        "#replay"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-10.svg",
+      "sha256": "b036db9e85ef63e67379991bc4e4e9b58e532c31e12ed6bf4a65f5a8bfdf5414",
+      "bytes": 185,
+      "selectors": [
+        "#newGame"
+      ]
+    },
+    {
+      "path": "assets/icons/icon-11.svg",
+      "sha256": "34134d10dde305ea17b7900b0511fa506426be658eb85b67fafaec1599e84704",
+      "bytes": 217,
+      "selectors": [
+        "#toHome"
+      ]
+    }
+  ]
+}

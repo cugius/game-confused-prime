@@ -23,5 +23,34 @@ Apri `index.html` in un browser. Per pubblicarlo basta attivare GitHub Pages su 
 - I colori vivono solo in variabili CSS su `[data-theme]`; i nuovi temi si aggiungono definendo un blocco di variabili e una voce nell'elenco `THEMES`.
 - Preferenze e record in `localStorage` (`cbm-primi-v1`, `cbm-primi-collection-v1`).
 
+## Fonte e materiali del progetto
+
+La versione attuale è **PRIMI v2.8**, importata con Claude nel commit `10d6123` del 23 ottobre 2026. `index.html` nella radice è la fonte autorevole e resta autosufficiente: non richiede gli asset separati per funzionare. La vecchia versione `primi.html` v1.9 è un riferimento storico, non una sorgente da ripristinare.
+
+| Percorso | Contenuto |
+| --- | --- |
+| `index.html` | Gioco completo, CSS, JavaScript, traduzioni e musiche incorporate |
+| `assets/audio/` | Due MP3 esportati senza modifiche dai dati incorporati |
+| `assets/icons/` | Undici SVG esportati dal CSS attuale |
+| `assets/manifest.json` | Provenienza, loop, dimensioni, checksum e selettori delle icone |
+| `docs/CANON-MECCANICHE.md` | Regole effettive della v2.8 |
+| `docs/ARCHITETTURA.md` | Motore, UI, lingue, temi, audio e salvataggi |
+| `docs/CREDITI-E-ASSET.md` | Origine e gestione dei materiali |
+| `docs/MIGRAZIONE.md` | Confronto con la v1.9 e criteri di importazione |
+| `docs/CHANGELOG.md` | Cronologia ricostruita e deposito dei materiali |
+| `docs/VERIFICA.md` | Verifiche eseguite e limiti |
+| `scripts/extract_assets.py` | Esportazione ripetibile e controllo degli asset |
+
+Per aggiornare il progetto, modifica `index.html`, poi esegui:
+
+```sh
+python3 scripts/extract_assets.py
+python3 scripts/extract_assets.py --check
+```
+
+Aggiorna contestualmente documentazione e crediti. Le copie in `assets/` sono derivate: modificarle da sole non cambia il gioco. Non sono necessari npm, bundler, CDN o un server per giocare. Per una prova HTTP locale: `python3 -m http.server 8000`.
+
+La versione v2.8 è quella identificata dal commit di Claude; alcuni testi interni e il risultato condiviso riportano ancora v1.9. Il deposito dei materiali conserva questi testi e il gioco originale byte per byte. Non sono presenti wrapper nativi o integrazioni Game Center/Play Games in questo progetto.
+
 ## Crediti
 Musiche "Orbital Guidance" e "Pulsar Horizon" da Confused Photon, generate con Google Gemini. Suoni e grafica creati per PRIMI. Prototipazione assistita da ChatGPT / Codex di OpenAI; grafica, temi e layout v2.2–v2.8 con Claude.

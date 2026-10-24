@@ -14,7 +14,7 @@ Puzzle sui numeri primi, in un unico file HTML che funziona offline.
 - 6 lingue: italiano, inglese, spagnolo, francese, tedesco, giapponese. Inglese predefinito; le preferenze già salvate sono conservate.
 - Zoom del browser bloccato tramite viewport, touch-action e gestione di gesti, doppio clic e scorciatoie. Scorrimento dei pannelli e slider restano disponibili.
 - Musica ed effetti sonori con volumi separati, aptica, raccolta dei primi creati, tutorial interattivo.
-- Layout pensato per smartphone (da 320 px di larghezza).
+- Layout pensato per smartphone, iPhone e Android, in verticale e in orizzontale (da 280 px di larghezza); schermi corti compattati.
 
 ## Usarlo
 Apri `index.html` in un browser. Per pubblicarlo basta attivare GitHub Pages su questo repository (branch principale, cartella radice).
@@ -54,7 +54,7 @@ Aggiorna contestualmente documentazione e crediti. Le copie in `assets/` sono de
 La versione v2.8 è quella identificata dal commit di Claude; alcuni testi interni e il risultato condiviso riportano ancora v1.9. Il deposito dei materiali conserva questi testi e il gioco originale byte per byte. Non sono presenti wrapper nativi o integrazioni Game Center/Play Games in questo progetto.
 
 ## Crediti
-Musiche "Orbital Guidance" e "Pulsar Horizon" da Confused Photon, generate con Google Gemini. Suoni e grafica creati per Confused Prime. Prototipazione assistita da ChatGPT / Codex di OpenAI; grafica, temi e layout v2.2–v2.8 con Claude.
+Musiche "Orbital Guidance" e "Pulsar Horizon" da Confused Photon, generate con Google Gemini. Suoni e grafica creati per Confused Prime. Prototipazione assistita da ChatGPT / Codex di OpenAI; grafica, temi e layout v2.2–v2.9 con Claude.
 
 ## Sito
 

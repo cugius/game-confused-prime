@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-24 — v2.9 schermi corti e orizzontale (Claude)
+
+- Schermi corti (< 620 px di altezza): intestazione, HUD e pannello compattati; la tabella cresce di circa 50-70 px con le barre del browser aperte.
+- Layout orizzontale a due colonne (tabella a sinistra, punteggio e azioni a destra).
+- Aree di tocco ampliate per Menu e Suggerimento.
+- Unito con le modifiche Confused Prime / blocco zoom: nome, wordmark, inglese predefinito e blocco dello zoom sono conservati. Il commit 2d7d412 le aveva sovrascritte per errore; questo commit le ripristina sopra la v2.9.
+
 ## 2026-10-24 — Confused Prime e blocco zoom
 
 - Allineato il repository alla versione già pubblicata come Confused Prime: nome in home, partita, crediti, pannelli e condivisione; wordmark adattato agli schermi stretti.

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-24 — v2.10 menu come Confused Words (Claude)
+
+- Home: una sola icona impostazioni (cursori, come Confused Words) e riga di tre strumenti: Come si gioca, Primi creati, Aspetto.
+- Impostazioni a schede Aspetto / Gioco / Info, con carosello dei temi e puntini di posizione.
+- Menu di pausa: pulsante Riprendi, poi Impostazioni, Come si gioca, Primi creati; in fondo Riprova, Nuova partita, Home.
+- In partita: pulsante pausa tondo al posto di "Menu".
+- Home bloccata senza scorrimento quando il contenuto entra nello schermo.
+- Campi di testo e select a 16 px per evitare l'ingrandimento automatico su iOS.
+- Ripristinati i collegamenti di musica, effetti, aptica, lingua e prova suoni, e corretto il trascinamento degli slider.
+
 ## 2026-10-24 — v2.9 schermi corti e orizzontale (Claude)
 
 - Schermi corti (< 620 px di altezza): intestazione, HUD e pannello compattati; la tabella cresce di circa 50-70 px con le barre del browser aperte.

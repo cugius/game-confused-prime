@@ -1,3 +1,12 @@
+# Verifica aggiornamento — 24 ottobre 2026
+
+- Repository e sito usano lo stesso HTML, con nome Confused Prime e inglese predefinito.
+- Conservate le chiavi storiche dei salvataggi.
+- Sintassi JavaScript verificata con Node.js; 14 esportazioni degli asset verificate e checksum audio invariati; diff senza errori di spaziatura.
+- Prova in browser: home in inglese e avvio del tutorial. Pinch e doppio tap su iPhone reale non verificati; le funzioni di accessibilità del browser possono prevalere sul blocco della pagina.
+
+La verifica seguente descrive il deposito storico prima di queste modifiche.
+
 # Verifica del deposito — 23 ottobre 2026
 
 ## Controlli eseguiti

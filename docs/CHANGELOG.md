@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-24 — Confused Prime e blocco zoom
+
+- Allineato il repository alla versione già pubblicata come Confused Prime: nome in home, partita, crediti, pannelli e condivisione; wordmark adattato agli schermi stretti.
+- Inglese predefinito mantenendo le preferenze e i record salvati.
+- Bloccati pinch, doppio tap/doppio clic, gesti Safari e scorciatoie di zoom; scorrimento dei menu e slider conservati.
+- Aggiornati manifest degli asset e sito con lo stesso HTML.
+
+
 ## 2026-10-23 — Deposito e allineamento dei materiali
 
 - Adottata come fonte unica la revisione Claude PRIMI v2.8 già presente in `index.html` su `main` (`10d6123`). HTML e comportamento conservati byte per byte.

@@ -1,4 +1,4 @@
-# PRIMI — Confused By Me
+# Confused Prime — Confused By Me
 
 Puzzle sui numeri primi, in un unico file HTML che funziona offline.
 
@@ -11,7 +11,8 @@ Puzzle sui numeri primi, in un unico file HTML che funziona offline.
 
 ## Funzioni
 - 9 temi (Confetti, Menta, Sakura, Tramonto, Alto contrasto, Notte, Oceano, Neon, Terminale) più "Automatico", che segue il tema chiaro/scuro del dispositivo. Scelta salvata sul dispositivo.
-- 6 lingue: italiano, inglese, spagnolo, francese, tedesco, giapponese.
+- 6 lingue: italiano, inglese, spagnolo, francese, tedesco, giapponese. Inglese predefinito; le preferenze già salvate sono conservate.
+- Zoom del browser bloccato tramite viewport, touch-action e gestione di gesti, doppio clic e scorciatoie. Scorrimento dei pannelli e slider restano disponibili.
 - Musica ed effetti sonori con volumi separati, aptica, raccolta dei primi creati, tutorial interattivo.
 - Layout pensato per smartphone (da 320 px di larghezza).
 
@@ -25,7 +26,7 @@ Apri `index.html` in un browser. Per pubblicarlo basta attivare GitHub Pages su 
 
 ## Fonte e materiali del progetto
 
-La versione attuale è **PRIMI v2.8**, importata con Claude nel commit `10d6123` del 23 ottobre 2026. `index.html` nella radice è la fonte autorevole e resta autosufficiente: non richiede gli asset separati per funzionare. La vecchia versione `primi.html` v1.9 è un riferimento storico, non una sorgente da ripristinare.
+La versione attuale è **Confused Prime**, basata su PRIMI v2.8, importata con Claude nel commit `10d6123` del 23 ottobre 2026. `index.html` nella radice è la fonte autorevole e resta autosufficiente: non richiede gli asset separati per funzionare. La vecchia versione `primi.html` v1.9 è un riferimento storico, non una sorgente da ripristinare.
 
 | Percorso | Contenuto |
 | --- | --- |
@@ -53,4 +54,10 @@ Aggiorna contestualmente documentazione e crediti. Le copie in `assets/` sono de
 La versione v2.8 è quella identificata dal commit di Claude; alcuni testi interni e il risultato condiviso riportano ancora v1.9. Il deposito dei materiali conserva questi testi e il gioco originale byte per byte. Non sono presenti wrapper nativi o integrazioni Game Center/Play Games in questo progetto.
 
 ## Crediti
-Musiche "Orbital Guidance" e "Pulsar Horizon" da Confused Photon, generate con Google Gemini. Suoni e grafica creati per PRIMI. Prototipazione assistita da ChatGPT / Codex di OpenAI; grafica, temi e layout v2.2–v2.8 con Claude.
+Musiche "Orbital Guidance" e "Pulsar Horizon" da Confused Photon, generate con Google Gemini. Suoni e grafica creati per Confused Prime. Prototipazione assistita da ChatGPT / Codex di OpenAI; grafica, temi e layout v2.2–v2.8 con Claude.
+
+## Sito
+
+https://confused-prime.candidloach2.chatgpt.site
+
+Il file pubblicato è identico a `index.html` di questo repository. Il nome Confused Prime compare su home, intestazione, pannelli, crediti e risultati condivisi. Le chiavi storiche `cbm-primi-*` rimangono per conservare i salvataggi.

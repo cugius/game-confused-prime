@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-29 — AU-08 concluso (Claude)
+
+- Politica audio decisa come Confused Words: playback su iOS, interruttori di gioco rispettati, musica di altre app non interrotta su wrapper nativo, riattivazione dopo interruzione. Dettagli in `docs/CANON.md`.
+
 ## 2026-10-29 — v2.12 test, CI e completamento del canon (Claude)
 
 - Test funzionali (`tests/test_app.py`, 25 controlli), misure di memoria e frame (`tests/perf.py`), lint (`scripts/lint.py`), workflow CI.

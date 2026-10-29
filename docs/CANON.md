@@ -37,7 +37,13 @@ Questo file contiene il riepilogo delle regole applicabili, le eccezioni del gio
 
 ## Decisioni e verifiche aggiunte (v2.12)
 
-**AU-08 — politica audio (da ratificare).** L'audio usa la categoria `playback` su iOS (`navigator.audioSession.type`), quindi suona anche con il tasto silenzioso attivo. La scelta è stata fatta per una segnalazione di assenza di audio, non per aggirare un problema di sblocco: il canon chiede di ratificarla. Non c'è ancora una politica per la musica di altre app.
+**AU-08 — politica audio (decisa).** Stessa politica di Confused Words (`AppDelegate.swift`, `Web/index.html`):
+- categoria `playback` su iOS: musica ed effetti di gioco suonano anche con il tasto Silenzioso attivo, come richiede un gioco con musica. Motivo: la scelta è stata fatta anche per la segnalazione di assenza di audio, ed è coerente con il sibling;
+- gli interruttori Musica ed Effetti dentro il gioco sono sempre rispettati (AU-01);
+- la musica di altre app non viene interrotta: su wrapper nativo `mixWithOthers`. Sul web Safari non offre questa opzione: il comportamento resta quello del sistema;
+- fine di un'interruzione: il contesto audio si riattiva e la musica riparte come in Confused Words.
+
+Da ratificare nel canon comune: il canon non fissa questa scelta. Questa proposta è quella già in uso nel sibling.
 
 **AU — ripresa dopo interruzione.** Quando l'app torna in primo piano la partita resta in pausa (UX-05). Il contesto audio si riattiva al primo tocco valido (`unlock`) e la musica riparte solo se la partita non è in pausa. Non è automatico: è il comportamento richiesto dal canon per i gesti necessari. Non verificato su iPhone reale.
 
@@ -59,7 +65,7 @@ Questo file contiene il riepilogo delle regole applicabili, le eccezioni del gio
 | RESP-02 | Passa: home senza scroll in 40 viewport, verticali e orizzontali. |
 | SV-01 | Parziale: salvataggi con campo `v`, valori fuori tipo corretti. Nessuna migrazione oltre i default. |
 | I18N-01–04 | Parziale: inventario in `docs/I18N.md`, controllo automatico delle sei lingue. Manca la prova di testo ingrandito. |
-| AU-08 | Da ratificare: vedi sopra. |
+| AU-08 | Passa (decisione di gioco): stessa politica di Confused Words. Ratifica nel canon comune ancora da fare. |
 
 ## Ancora da fare
 

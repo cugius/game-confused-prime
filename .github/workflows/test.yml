@@ -1,0 +1,22 @@
+name: test
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Build coerente con src/
+        run: python3 scripts/build.py --check
+      - name: Lint
+        run: python3 scripts/lint.py
+      - name: Test funzionali
+        run: python3 tests/test_app.py
+      - name: Misure di memoria e frame
+        run: python3 tests/perf.py

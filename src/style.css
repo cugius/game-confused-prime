@@ -256,3 +256,8 @@ html,body{overscroll-behavior:none}body.no-scroll{overflow:hidden;height:100dvh}
 
 /* ── Canon v0.4 · AC-01: interruttore "Riduci movimento" in-app ── */
 html.reduce-motion *,html.reduce-motion *:before,html.reduce-motion *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+
+/* ── Canon v0.4 · RESP-02: home senza scorrimento sugli schermi bassi ── */
+@media(max-height:520px){.home{min-height:calc(100dvh - 24px);gap:6px}.hero h1{font-size:44px;margin:4px 0 6px}.hero p{font-size:13px}.art{display:none}.home-actions button{min-height:64px;padding:8px 12px}.home-actions #play{min-height:50px}.home-tools button,.home-actions .home-tools button{min-height:50px}}
+@media(orientation:landscape) and (max-height:520px){.home{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);align-items:center;column-gap:20px;min-height:calc(100dvh - 20px)}.home-top{grid-column:1/-1}.hero{grid-column:1}.home-actions{grid-column:2}}
+@media(orientation:landscape) and (max-height:420px){.shell{padding-top:6px;padding-bottom:6px}#home{padding:4px 16px}.home-actions{gap:6px}.home-actions button{min-height:52px}.home-actions #play{min-height:44px}.home-tools button,.home-actions .home-tools button{min-height:44px}.home-top{min-height:36px}.hero h1{font-size:38px}.footer{display:none}}

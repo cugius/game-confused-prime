@@ -35,9 +35,34 @@ Questo file contiene il riepilogo delle regole applicabili, le eccezioni del gio
 | Memoria (MEM-*) | Non verificato | Nessuna misura di heap, frame time o cicli. |
 | Sicurezza (SEC-*) | Passa | Nessuna dipendenza esterna, nessun secret, nessun endpoint. |
 
-## Da fare prima della prossima revisione
+## Decisioni e verifiche aggiunte (v2.12)
 
-- Test automatici su salvataggi, lingue e percorsi di interruzione, eseguiti in CI.
-- Prova su iPhone reale per audio, aptica e ripresa dopo interruzione.
-- Misure di memoria sui cicli partita/menu.
-- Inventario delle chiavi di traduzione.
+**AU-08 — politica audio (da ratificare).** L'audio usa la categoria `playback` su iOS (`navigator.audioSession.type`), quindi suona anche con il tasto silenzioso attivo. La scelta è stata fatta per una segnalazione di assenza di audio, non per aggirare un problema di sblocco: il canon chiede di ratificarla. Non c'è ancora una politica per la musica di altre app.
+
+**AU — ripresa dopo interruzione.** Quando l'app torna in primo piano la partita resta in pausa (UX-05). Il contesto audio si riattiva al primo tocco valido (`unlock`) e la musica riparte solo se la partita non è in pausa. Non è automatico: è il comportamento richiesto dal canon per i gesti necessari. Non verificato su iPhone reale.
+
+**SEC-04 — innerHTML.** Dieci assegnazioni in `src/app.js` (righe elencate da `scripts/lint.py`). Tutte interpolano solo costanti, numeri formattati, traduzioni o valori del motore. Nessun testo immesso dall'utente o letto dal salvataggio viene inserito nel DOM. Il campo di ricerca della raccolta accetta solo cifre.
+
+**CODE-02 — usi indiretti.** Lookup costruiti a runtime controllati: `$('q'+i)` (q0–q2), `'spanel-'+tab` (tre valori fissi), `data-theme-id` dalla lista `THEMES`. Gli ID rimasti non referenziati sono solo quelli elencati da questi lookup.
+
+**MEM — misure (headless).** Dieci cicli partita/menu/home: heap JavaScript da 3,56 MB a 3,73 MB; dal ciclo 5 in poi resta fermo a 3,69 MB, nodi DOM costanti (478). Frame in partita: 16,7 ms medi. Non è il profilo su dispositivo fisico (MEM-05).
+
+**Eseguito in CI** (`.github/workflows/test.yml`): build coerente, lint, test funzionali (25), misure di memoria e frame.
+
+## Stato aggiornato
+
+| Regola | Esito |
+|---|---|
+| REL-02 / CODE-03 | Parziale: test e lint nel repo e in CI. Mancano prove su dispositivo fisico. |
+| MEM-01/04 | Parziale: cicli senza crescita significativa. Budget per dispositivo non definiti. |
+| MEM-05 | Non verificato su dispositivo fisico. |
+| RESP-02 | Passa: home senza scroll in 40 viewport, verticali e orizzontali. |
+| SV-01 | Parziale: salvataggi con campo `v`, valori fuori tipo corretti. Nessuna migrazione oltre i default. |
+| I18N-01–04 | Parziale: inventario in `docs/I18N.md`, controllo automatico delle sei lingue. Manca la prova di testo ingrandito. |
+| AU-08 | Da ratificare: vedi sopra. |
+
+## Ancora da fare
+
+- Prova su iPhone reale per audio, silenzioso, aptica (N/A su iOS), ripresa dopo interruzione e multitouch.
+- Prova di testo ingrandito dal sistema su dispositivo.
+- Profilo di memoria e frame su dispositivo fisico, con budget per classe di dispositivo.

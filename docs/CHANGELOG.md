@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-29 — v2.12 test, CI e completamento del canon (Claude)
+
+- Test funzionali (`tests/test_app.py`, 25 controlli), misure di memoria e frame (`tests/perf.py`), lint (`scripts/lint.py`), workflow CI.
+- Home senza scroll su 40 viewport, comprese le orizzontali basse (320 e 340 px di altezza).
+- Salvataggi con campo `v`: valori fuori tipo corretti al caricamento.
+- Documentazione: `docs/I18N.md`, politica audio e revisione SEC-04/CODE-02 in `docs/CANON.md`.
+
 ## 2026-10-29 — v2.11 sorgenti, canon e accessibilità (Claude)
 
 - Sorgenti separati in `src/`; `index.html` è generato con `scripts/build.py`, che `--check` verifica.

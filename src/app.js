@@ -53,8 +53,10 @@ class Engine {
 const modeName=mode=>({normal:'Normale',training:'Allenamento',attack:'Time Attack'})[mode];
 const recordKey=mode=>({normal:'bestNormal',training:'bestTrain',attack:'bestAttack'})[mode];
 const $=id=>document.getElementById(id),MUSIC=JSON.parse(document.getElementById('musicAssets').textContent),fmt=n=>n.toLocaleString(locale());
-let storageOK=true,prefs={language:'en',theme:'confetti',hintsDay:'',hintsUsed:0,sound:true,music:true,musicVolume:.35,soundVolume:.65,haptic:true,reduceMotion:false,tutorial:false,bestNormal:0,bestTrain:0,bestAttack:0};
+let storageOK=true,prefs={v:2,language:'en',theme:'confetti',hintsDay:'',hintsUsed:0,sound:true,music:true,musicVolume:.35,soundVolume:.65,haptic:true,reduceMotion:false,tutorial:false,bestNormal:0,bestTrain:0,bestAttack:0};
 try{const data=JSON.parse(localStorage.getItem('cbm-primi-v1')||'{}');for(const k of Object.keys(prefs))if(typeof data[k]===typeof prefs[k])prefs[k]=data[k];}catch(_){storageOK=false;}
+/* Salvataggi v1 (senza campo v) si caricano con i default mancanti; i valori fuori tipo tornano ai default. */
+const nonNeg=(x,d)=>Number.isFinite(x)&&x>=0?Math.floor(x):d;prefs.v=2;prefs.hintsUsed=nonNeg(prefs.hintsUsed,0);for(const k of ['bestNormal','bestTrain','bestAttack'])prefs[k]=nonNeg(prefs[k],0);if(typeof prefs.hintsDay!=='string')prefs.hintsDay='';if(typeof prefs.language!=='string')prefs.language='en';
 prefs.musicVolume=Number.isFinite(prefs.musicVolume)?Math.min(1,Math.max(0,prefs.musicVolume)):.35;prefs.soundVolume=Number.isFinite(prefs.soundVolume)?Math.min(1,Math.max(0,prefs.soundVolume)):.65;
 function save(){try{localStorage.setItem('cbm-primi-v1',JSON.stringify(prefs));}catch(_){storageOK=false;}$('storageWarning').hidden=storageOK;}
 

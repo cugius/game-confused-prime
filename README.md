@@ -26,6 +26,17 @@ python3 scripts/build.py --check  # fallisce se index.html non corrisponde a src
 
 Le eccezioni al canon comune sono in `docs/CANON.md`.
 
+## Test
+
+```
+python3 scripts/lint.py
+pip install playwright && python -m playwright install chromium
+python3 tests/test_app.py   # test funzionali
+python3 tests/perf.py        # memoria e frame
+```
+
+In CI il workflow `.github/workflows/test.yml` esegue gli stessi controlli a ogni push.
+
 ## Usarlo
 Apri `index.html` in un browser. Per pubblicarlo basta attivare GitHub Pages su questo repository (branch principale, cartella radice).
 

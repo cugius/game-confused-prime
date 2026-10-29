@@ -45,7 +45,7 @@ def main():
             pg.click("#homeSettings"); pg.wait_for_timeout(120)
             pg.evaluate("document.getElementById('sheetClose').click()")
             pg.click("#homeInfo"); pg.wait_for_timeout(120)
-            pg.evaluate("document.getElementById('sheetClose').click()")
+            pg.evaluate("document.getElementById('creditsDone').click()")
             pg.evaluate("document.dispatchEvent(new Event('visibilitychange'))")
             samples.append(heap(cdp, pg))
             print(f"ciclo {cycle:2d}: heap {samples[-1]:.2f} MB, nodi DOM {pg.evaluate('document.getElementsByTagName(\"*\").length')}")

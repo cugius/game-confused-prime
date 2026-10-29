@@ -59,7 +59,7 @@ def main():
         check("i18n: ogni riga ha 6 lingue non vuote", not bad, f"{len(rows)} righe" + (f", difettose: {bad[:3]}" if bad else ""))
 
         # 3. aptica e riduci movimento per piattaforma
-        pg.click("#homeSettings"); pg.click("#stab-play"); pg.wait_for_timeout(150)
+        pg.click("#homeSettings"); pg.click("#stab-audio"); pg.wait_for_timeout(150)
         check("aptica: visibile fuori da iOS", pg.evaluate("!!document.getElementById('settingHaptic')"))
         check("riduci movimento: presente", pg.evaluate("!!document.getElementById('settingMotion')"))
         pg.click("#settingMotion")
@@ -71,7 +71,7 @@ def main():
         ctx.close()
 
         ctx, pg, errs = new_page(b, ua=IOS_UA)
-        pg.click("#homeSettings"); pg.click("#stab-play"); pg.wait_for_timeout(150)
+        pg.click("#homeSettings"); pg.click("#stab-audio"); pg.wait_for_timeout(150)
         check("aptica: nascosta su iOS", not pg.evaluate("!!document.getElementById('settingHaptic')"))
         check("riduci movimento: presente su iOS", pg.evaluate("!!document.getElementById('settingMotion')"))
         ctx.close()
@@ -116,11 +116,18 @@ def main():
 
         # 8. lingua e controlli: testi di input a 16 px (no zoom automatico iOS)
         ctx, pg, errs = new_page(b)
-        pg.click("#homeSettings"); pg.click("#stab-play"); pg.wait_for_timeout(100)
+        pg.click("#homeSettings"); pg.wait_for_timeout(100)
         fs = pg.evaluate("parseFloat(getComputedStyle(document.getElementById('languageSelect')).fontSize)")
         check("input: select lingua a 16 px", fs >= 16, f"{fs}px")
         pg.select_option("#languageSelect", "de"); pg.wait_for_timeout(150)
-        check("lingua: cambio applicato e scheda conservata", pg.evaluate("document.documentElement.lang")=="de" and pg.evaluate("document.querySelector('.sheet-tabs [aria-selected=true]').dataset.tab")=="play")
+        check("lingua: cambio applicato e scheda conservata", pg.evaluate("document.documentElement.lang")=="de" and pg.evaluate("document.querySelector('.sheet-tabs [aria-selected=true]').dataset.tab")=="game")
+        ctx.close()
+
+        # 8b. versione mostrata coincide con src/VERSION
+        ctx, pg, errs = new_page(b)
+        ver = (ROOT / "src" / "VERSION").read_text(encoding="utf-8").strip()
+        footer = pg.evaluate("document.querySelector('.home .footer').textContent")
+        check("versione: footer coerente con src/VERSION", f"v{ver}" in footer, footer)
         ctx.close()
 
         # 9. tutorial isolato dalla raccolta

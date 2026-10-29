@@ -17,6 +17,7 @@ Questo file contiene il riepilogo delle regole applicabili, le eccezioni del gio
 | Area | Esito | Note |
 |---|---|---|
 | Home (UX-01) | Passa | Info in alto a sinistra, Aiuto in alto a destra, marchio al centro. Impostazioni in basso. Sfondo animato decorativo, fermo con riduci movimento. |
+| Impostazioni (UX-07) | Passa | Tre schede: Gioco (lingua, guida, raccolta, crediti), Aspetto (temi), Audio e accessibilità (musica, effetti, aptica, riduci movimento). |
 | Navigazione (UX-03/04/05/06) | Passa | Indietro, Home e Chiudi funzionano; aprire menu, impostazioni, raccolta o guida ferma la partita; cambio di app mette in pausa. |
 | Tab e accordion (UX-09/10) | Passa | Tab con frecce da tastiera, ruoli ARIA, scheda conservata al ritorno. Nessun accordion. |
 | Audio (AU-01/02/03) | Parziale | Interruttori e volumi separati e salvati. Verificato per il solo canale web. |
@@ -33,7 +34,17 @@ Questo file contiene il riepilogo delle regole applicabili, le eccezioni del gio
 | Debug (CODE-06) | Passa | Rimossa la variabile globale `window.__lockHome`. |
 | Test automatici (REL-02, CODE-03) | Non passa | Nessun test né lint nel repo. |
 | Memoria (MEM-*) | Non verificato | Nessuna misura di heap, frame time o cicli. |
-| Sicurezza (SEC-*) | Passa | Nessuna dipendenza esterna, nessun secret, nessun endpoint. |
+| Sicurezza (SEC-*) | Passa | Revisione completa in `docs/SICUREZZA.md`. |
+| Memoria e prestazioni (MEM-*) | Passa (headless) | Budget e misure in `docs/PRESTAZIONI.md`. Profilo su dispositivo ancora da fare. |
+| IN-02 | Passa | Lente e menu di copia disattivati sul campo di gioco. |
+| AU-03 | Passa | Il jingle di fine partita passa dal bus Musica e segue l'interruttore Musica. |
+
+## Eccezioni aggiornate (v2.13)
+
+- **UX-08 (SHOULD):** disegno del Pulsante Pausa 40×40 (36×36 su schermi bassi), Suggerimento alto 26–34 px; area di tocco 44×44 tramite pseudo-elemento. Motivo: priorità alla tabella di gioco.
+- **DEV-02 / CODE-05 (SHOULD):** il gioco resta un unico file HTML, senza moduli separati, per l'esecuzione offline senza server. La separazione è nei sorgenti `src/` (logica e stile separati, `app.js` unico).
+- **IN-01 (MUST, applicato in parte):** il gioco usa solo tocchi a singolo dito (eventi `click`), senza combinazioni simultanee; non traccia `pointerId`. Le annullazioni del tocco sono gestite dal browser e dal blur, non dalla logica di gioco.
+- **REL-03 (MUST, parte applicabile):** versione unica in `src/VERSION`, inserita nel footer e nel testo dei risultati. Non ci sono bundle, Bundle ID o entitlements: web.
 
 ## Decisioni e verifiche aggiunte (v2.12)
 

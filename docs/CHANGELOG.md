@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-29 — v2.13 revisione canon (Claude)
+
+- Impostazioni in tre schede secondo UX-07: Gioco, Aspetto, Audio e accessibilità.
+- Jingle di fine partita sul bus Musica e sotto l'interruttore Musica (AU-03).
+- Nessuna lente o menu di copia sul campo di gioco (IN-02).
+- Versione unica in `src/VERSION`; footer e risultati mostrano 2.13 (REL-03).
+- Documenti: `docs/SICUREZZA.md`, `docs/PRESTAZIONI.md`; eccezioni aggiornate in `docs/CANON.md`.
+
 ## 2026-10-29 — v2.13 home secondo il canon (Claude)
 
 - Home: Info in alto a sinistra, Aiuto in alto a destra, marchio al centro (UX-01 ora conforme).

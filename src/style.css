@@ -274,3 +274,6 @@ html.reduce-motion *,html.reduce-motion *:before,html.reduce-motion *:after{anim
 @keyframes drift{from{transform:translate3d(0,0,0) rotate(-4deg)}to{transform:translate3d(var(--dx),-22px,0) rotate(5deg)}}
 @media(prefers-reduced-motion:reduce){.home-bg i{animation:none}}
 .home-tools:not(.session-tools){grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* ── Canon v0.4 · IN-02: nessuna lente o menu di copia sul campo di gioco ── */
+#game,#board,#game .board-wrap{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}

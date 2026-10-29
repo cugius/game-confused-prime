@@ -20,6 +20,7 @@ def read(name):
 
 
 def build():
+    version = read("VERSION").strip()
     return (
         read("head.html")
         + read("style.css")
@@ -31,7 +32,7 @@ def build():
         + read("app.js")
         + "\n"
         + read("tail.html")
-    )
+    ).replace("{{VERSION}}", version)
 
 
 def main(argv):

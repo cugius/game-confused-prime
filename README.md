@@ -16,6 +16,16 @@ Puzzle sui numeri primi, in un unico file HTML che funziona offline.
 - Musica ed effetti sonori con volumi separati, aptica, raccolta dei primi creati, tutorial interattivo.
 - Layout pensato per smartphone, iPhone e Android, in verticale e in orizzontale (da 280 px di larghezza); schermi corti compattati.
 
+## Sviluppo
+La fonte è in `src/`: `head.html`, `style.css`, `body.html`, `app.js`, `music.json` (musiche in base64), `tail.html`. `index.html` è generato: non modificarlo a mano.
+
+```
+python3 scripts/build.py          # ricostruisce index.html
+python3 scripts/build.py --check  # fallisce se index.html non corrisponde a src/
+```
+
+Le eccezioni al canon comune sono in `docs/CANON.md`.
+
 ## Usarlo
 Apri `index.html` in un browser. Per pubblicarlo basta attivare GitHub Pages su questo repository (branch principale, cartella radice).
 
@@ -26,11 +36,14 @@ Apri `index.html` in un browser. Per pubblicarlo basta attivare GitHub Pages su 
 
 ## Fonte e materiali del progetto
 
-La versione attuale è **Confused Prime**, basata su PRIMI v2.8, importata con Claude nel commit `10d6123` del 23 ottobre 2026. `index.html` nella radice è la fonte autorevole e resta autosufficiente: non richiede gli asset separati per funzionare. La vecchia versione `primi.html` v1.9 è un riferimento storico, non una sorgente da ripristinare.
+La versione attuale è **Confused Prime**, basata su PRIMI v2.8, importata con Claude nel commit `10d6123` del 23 ottobre 2026. `src/` è la fonte autorevole; `index.html` nella radice è generato da `src/` e resta autosufficiente: non richiede gli asset separati per funzionare. La vecchia versione `primi.html` v1.9 è un riferimento storico, non una sorgente da ripristinare.
 
 | Percorso | Contenuto |
 | --- | --- |
-| `index.html` | Gioco completo, CSS, JavaScript, traduzioni e musiche incorporate |
+| `index.html` | Gioco completo, generato da `src/` con `scripts/build.py` |
+| `src/` | Sorgenti: HTML, CSS, JavaScript, traduzioni e musiche incorporate |
+| `scripts/build.py` | Assemblaggio di `index.html` e controllo di corrispondenza |
+| `docs/CANON.md` | Applicazione del canon comune e eccezioni del gioco |
 | `assets/audio/` | Due MP3 esportati senza modifiche dai dati incorporati |
 | `assets/icons/` | Undici SVG esportati dal CSS attuale |
 | `assets/manifest.json` | Provenienza, loop, dimensioni, checksum e selettori delle icone |

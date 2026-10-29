@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-29 — v2.11 sorgenti, canon e accessibilità (Claude)
+
+- Sorgenti separati in `src/`; `index.html` è generato con `scripts/build.py`, che `--check` verifica.
+- Zoom bloccato solo sul campo di gioco; menu, impostazioni e guida tornano zoomabili. Rimosso `user-scalable=no` e `maximum-scale`.
+- Nuovo interruttore "Riduci movimento" in Impostazioni › Gioco, anche con la preferenza di sistema.
+- Aptica mostrata solo dove il dispositivo la supporta: nascosta su iOS e dove `navigator.vibrate` manca.
+- Area di tocco di Pausa e Suggerimento estesa a 44×44.
+- Rimossi `openThemes`, `themeName`, `toggleSound`, la variabile di debug `window.__lockHome` e 53 selettori CSS senza usi.
+- Eccezioni al canon UX-01, UX-07, UX-08 documentate in `docs/CANON.md`.
+
 ## 2026-10-24 — v2.10 menu come Confused Words (Claude)
 
 - Home: una sola icona impostazioni (cursori, come Confused Words) e riga di tre strumenti: Come si gioca, Primi creati, Aspetto.

@@ -9,7 +9,6 @@ Questo file contiene il riepilogo delle regole applicabili, le eccezioni del gio
 
 | ID | Regola del canon | Scelta di Confused Prime | Motivo |
 |---|---|---|---|
-| UX-01 | Credits/Informazioni in alto a sinistra nella home; aiuto in alto a destra | In alto a sinistra c'è il marchio "Confused By Me". Credits e informazioni stanno in Impostazioni › Info; la guida è nella riga strumenti della home. | La home ha una sola azione principale e un'identità centrale. Un terzo pulsante in alto sottrae spazio ai comandi nei viewport da 320×568. Credits resta raggiungibile in due tocchi, come il canon consente. |
 | UX-07 | Sezioni stabili: Gioco, Aspetto, Audio, Accessibilità/lingua | Tre sezioni: Aspetto, Gioco (lingua, audio, aptica, riduci movimento), Info. | Il gioco ha poche opzioni: separare audio e accessibilità produrrebbe schede quasi vuote. Le opzioni di accessibilità (riduci movimento, aptica) sono in Gioco, sotto le voci audio. |
 | UX-08 | Area di tocco di almeno 44×44 | Il disegno del pulsante Pausa è 40×40 (36×36 su schermi bassi) e quello di Suggerimento è alto 26–34 px. L'area di tocco reale è estesa a 44×44 con uno pseudo-elemento centrato. | Il disegno resta compatto per la tabella di gioco, che ha la priorità. L'area estesa è verificata in emulazione, non su dispositivo fisico. |
 
@@ -17,6 +16,7 @@ Questo file contiene il riepilogo delle regole applicabili, le eccezioni del gio
 
 | Area | Esito | Note |
 |---|---|---|
+| Home (UX-01) | Passa | Info in alto a sinistra, Aiuto in alto a destra, marchio al centro. Impostazioni in basso. Sfondo animato decorativo, fermo con riduci movimento. |
 | Navigazione (UX-03/04/05/06) | Passa | Indietro, Home e Chiudi funzionano; aprire menu, impostazioni, raccolta o guida ferma la partita; cambio di app mette in pausa. |
 | Tab e accordion (UX-09/10) | Passa | Tab con frecce da tastiera, ruoli ARIA, scheda conservata al ritorno. Nessun accordion. |
 | Audio (AU-01/02/03) | Parziale | Interruttori e volumi separati e salvati. Verificato per il solo canale web. |

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-29 — v2.13 home secondo il canon (Claude)
+
+- Home: Info in alto a sinistra, Aiuto in alto a destra, marchio al centro (UX-01 ora conforme).
+- Strumenti in basso: Primi creati e Impostazioni (al posto di Aspetto e Come si gioca).
+- Sfondo animato della home: tessere con numeri che scorrono piano; fermo con riduci movimento.
+
 ## 2026-10-29 — AU-08 concluso (Claude)
 
 - Politica audio decisa come Confused Words: playback su iOS, interruttori di gioco rispettati, musica di altre app non interrotta su wrapper nativo, riattivazione dopo interruzione. Dettagli in `docs/CANON.md`.

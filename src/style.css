@@ -261,3 +261,16 @@ html.reduce-motion *,html.reduce-motion *:before,html.reduce-motion *:after{anim
 @media(max-height:520px){.home{min-height:calc(100dvh - 24px);gap:6px}.hero h1{font-size:44px;margin:4px 0 6px}.hero p{font-size:13px}.art{display:none}.home-actions button{min-height:64px;padding:8px 12px}.home-actions #play{min-height:50px}.home-tools button,.home-actions .home-tools button{min-height:50px}}
 @media(orientation:landscape) and (max-height:520px){.home{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);align-items:center;column-gap:20px;min-height:calc(100dvh - 20px)}.home-top{grid-column:1/-1}.hero{grid-column:1}.home-actions{grid-column:2}}
 @media(orientation:landscape) and (max-height:420px){.shell{padding-top:6px;padding-bottom:6px}#home{padding:4px 16px}.home-actions{gap:6px}.home-actions button{min-height:52px}.home-actions #play{min-height:44px}.home-tools button,.home-actions .home-tools button{min-height:44px}.home-top{min-height:36px}.hero h1{font-size:38px}.footer{display:none}}
+
+/* ── Canon v0.4 · UX-01: Info in alto a sinistra, Aiuto in alto a destra, marchio al centro ── */
+.home-top{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:8px}
+.home-top .brand{text-align:center}
+/* ── Sfondo animato della home: tessere con numeri, decorative ── */
+.home{position:relative;isolation:isolate}
+.home-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.home-bg i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);display:grid;place-items:center;border-radius:calc(var(--s)*.32);font-style:normal;font-weight:800;font-size:calc(var(--s)*.42);color:var(--prime-text);background:linear-gradient(155deg,var(--prime-1),var(--prime-2));opacity:.2;box-shadow:0 4px 0 var(--tile-edge);animation:drift var(--d) ease-in-out var(--l) infinite alternate}
+.home-bg i:nth-child(3n+2){background:linear-gradient(150deg,var(--warm),var(--warm-2));color:var(--on-warm)}
+.home-bg i:nth-child(4n){background:linear-gradient(145deg,var(--accent-2),var(--accent));color:var(--on-accent)}
+@keyframes drift{from{transform:translate3d(0,0,0) rotate(-4deg)}to{transform:translate3d(var(--dx),-22px,0) rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.home-bg i{animation:none}}
+.home-tools:not(.session-tools){grid-template-columns:repeat(2,minmax(0,1fr))}

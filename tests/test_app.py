@@ -59,7 +59,7 @@ def main():
         check("i18n: ogni riga ha 6 lingue non vuote", not bad, f"{len(rows)} righe" + (f", difettose: {bad[:3]}" if bad else ""))
 
         # 3. aptica e riduci movimento per piattaforma
-        pg.click("#homeMenu"); pg.click("#stab-play"); pg.wait_for_timeout(150)
+        pg.click("#homeSettings"); pg.click("#stab-play"); pg.wait_for_timeout(150)
         check("aptica: visibile fuori da iOS", pg.evaluate("!!document.getElementById('settingHaptic')"))
         check("riduci movimento: presente", pg.evaluate("!!document.getElementById('settingMotion')"))
         pg.click("#settingMotion")
@@ -71,7 +71,7 @@ def main():
         ctx.close()
 
         ctx, pg, errs = new_page(b, ua=IOS_UA)
-        pg.click("#homeMenu"); pg.click("#stab-play"); pg.wait_for_timeout(150)
+        pg.click("#homeSettings"); pg.click("#stab-play"); pg.wait_for_timeout(150)
         check("aptica: nascosta su iOS", not pg.evaluate("!!document.getElementById('settingHaptic')"))
         check("riduci movimento: presente su iOS", pg.evaluate("!!document.getElementById('settingMotion')"))
         ctx.close()
@@ -116,7 +116,7 @@ def main():
 
         # 8. lingua e controlli: testi di input a 16 px (no zoom automatico iOS)
         ctx, pg, errs = new_page(b)
-        pg.click("#homeMenu"); pg.click("#stab-play"); pg.wait_for_timeout(100)
+        pg.click("#homeSettings"); pg.click("#stab-play"); pg.wait_for_timeout(100)
         fs = pg.evaluate("parseFloat(getComputedStyle(document.getElementById('languageSelect')).fontSize)")
         check("input: select lingua a 16 px", fs >= 16, f"{fs}px")
         pg.select_option("#languageSelect", "de"); pg.wait_for_timeout(150)

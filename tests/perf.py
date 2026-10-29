@@ -42,9 +42,9 @@ def main():
         for cycle in range(1, 11):
             pg.click("#train"); pg.wait_for_timeout(250)
             pg.evaluate("goHome()")
-            pg.click("#homeMenu"); pg.wait_for_timeout(120)
+            pg.click("#homeSettings"); pg.wait_for_timeout(120)
             pg.evaluate("document.getElementById('sheetClose').click()")
-            pg.click("#homeLook"); pg.wait_for_timeout(120)
+            pg.click("#homeInfo"); pg.wait_for_timeout(120)
             pg.evaluate("document.getElementById('sheetClose').click()")
             pg.evaluate("document.dispatchEvent(new Event('visibilitychange'))")
             samples.append(heap(cdp, pg))
